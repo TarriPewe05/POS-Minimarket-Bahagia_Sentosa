@@ -173,6 +173,7 @@
                       onclick="orderbasket('Beras', 65.755, './assets/default.jpeg'); costitems();"
                     >
                       <img
+                        draggable="false"
                         src="./assets/default.jpeg"
                         class="card-img-top"
                         alt="..."
@@ -189,6 +190,7 @@
                       onclick="orderbasket('Minyak Goreng', 55.999, './assets/default.jpeg');costitems();"
                     >
                       <img
+                        draggable="false"
                         src="./assets/default.jpeg"
                         class="card-img-top"
                         alt="..."
@@ -216,6 +218,7 @@
                       onclick="orderbasket('Sapu', 35.999, './assets/default.jpeg');costitems();"
                     >
                       <img
+                        draggable="false"
                         src="./assets/default.jpeg"
                         class="card-img-top"
                         alt="..."
@@ -232,6 +235,7 @@
                       onclick="orderbasket('Ember', 20.999, './assets/default.jpeg');costitems();"
                     >
                       <img
+                        draggable="false"
                         src="./assets/default.jpeg"
                         class="card-img-top"
                         alt="..."
@@ -256,6 +260,7 @@
                   <div class="col">
                     <div class="card">
                       <img
+                        draggable="false"
                         src="./assets/default.jpeg"
                         class="card-img-top"
                         alt="..."
@@ -269,6 +274,7 @@
                   <div class="col">
                     <div class="card">
                       <img
+                        draggable="false"
                         src="./assets/default.jpeg"
                         class="card-img-top"
                         alt="..."
@@ -293,6 +299,7 @@
                   <div class="col">
                     <div class="card">
                       <img
+                        draggable="false"
                         src="./assets/default.jpeg"
                         class="card-img-top"
                         alt="..."
@@ -306,6 +313,7 @@
                   <div class="col">
                     <div class="card">
                       <img
+                        draggable="false"
                         src="./assets/default.jpeg"
                         class="card-img-top"
                         alt="..."
@@ -330,6 +338,7 @@
                   <div class="col">
                     <div class="card">
                       <img
+                        draggable="false"
                         src="./assets/default.jpeg"
                         class="card-img-top"
                         alt="..."
@@ -343,6 +352,7 @@
                   <div class="col">
                     <div class="card">
                       <img
+                        draggable="false"
                         src="./assets/default.jpeg"
                         class="card-img-top"
                         alt="..."
@@ -367,6 +377,7 @@
                   <div class="col">
                     <div class="card">
                       <img
+                        draggable="false"
                         src="./assets/default.jpeg"
                         class="card-img-top"
                         alt="..."
@@ -380,6 +391,7 @@
                   <div class="col">
                     <div class="card">
                       <img
+                        draggable="false"
                         src="./assets/default.jpeg"
                         class="card-img-top"
                         alt="..."
@@ -404,6 +416,7 @@
                   <div class="col">
                     <div class="card">
                       <img
+                        draggable="false"
                         src="./assets/default.jpeg"
                         class="card-img-top"
                         alt="..."
@@ -417,6 +430,7 @@
                   <div class="col">
                     <div class="card">
                       <img
+                        draggable="false"
                         src="./assets/default.jpeg"
                         class="card-img-top"
                         alt="..."
@@ -441,6 +455,7 @@
                   <div class="col">
                     <div class="card">
                       <img
+                        draggable="false"
                         src="./assets/default.jpeg"
                         class="card-img-top"
                         alt="..."
@@ -454,6 +469,7 @@
                   <div class="col">
                     <div class="card">
                       <img
+                        draggable="false"
                         src="./assets/default.jpeg"
                         class="card-img-top"
                         alt="..."
@@ -477,13 +493,7 @@
               <h3><strong>Pesanan</strong></h3>
               <hr />
               <ul id="orderlist" class="list-unstyled">
-                <li>
-                  <img src="./assets/default.jpeg" alt="pesanan" class="w-25" />
-                  <span style="font-size: 18px; font-weight: 500">Beras</span>
-                  <span style="font-size: 16px; font-weight: 500"
-                    >Rp 65.000</span
-                  >
-                </li>
+              
               </ul>
               <!-- <div class="row">
                 <img
@@ -498,20 +508,26 @@
               <hr />
               <div class="row">
                 <div class="col"><h5>Subtotal</h5></div>
-                <div id="totalcost" class="col d-flex justify-content-end">
+                <div
+                  id="totalcost"
+                  class="col d-flex justify-content-end"
+                  style="font-size: 18px; font-weight: 500"
+                >
                   <h5>Rp 0</h5>
                 </div>
               </div>
               <div class="row">
                 <div class="col"><h6 class="text-danger">Ppn 11%</h6></div>
-                <div class="col d-flex justify-content-end">
+                <div id="totaltax" class="col d-flex justify-content-end">
                   <h6 class="text-danger">Rp 0</h6>
                 </div>
               </div>
               <hr />
               <div class="row">
                 <div class="col"><h4>Total</h4></div>
-                <div class="col d-flex justify-content-end"><h4>Rp 0</h4></div>
+                <div id="total" class="col d-flex justify-content-end">
+                  <h4>Rp 0</h4>
+                </div>
               </div>
             </div>
             <button type="button" class="btn btn-warning">
@@ -539,17 +555,13 @@
 
         //Create LI tag
         const orderitem = document.createElement("li");
-
+        orderitem.className =
+          "d-flex justify-content-between align-items-center";
         //create the text node
         const orderitemname = document.createTextNode(itemname);
         const orderitemprice = document.createTextNode(" Rp " + itemprice);
 
-        //Attach LI Tag to the text node
-        orderitem.appendChild(orderitemname);
-        orderitem.appendChild(orderitemprice);
-
-        //Append or Attach teh LI tag (child) to parent (orderlist)
-        orderlist.appendChild(orderitem);
+        
 
         //Create Image Tag
         const orderitemimgtag = document.createElement("img");
@@ -558,22 +570,56 @@
         orderitemimgtag.src = itemimage;
 
         //classname w-25 for image
-        orderitemimgtag.className = "w-25";
+        orderitemimgtag.className = "w-25 rounded border border-warning mb-1 me-2";
+
+        //
+        const orderitemleftsidespan = document.createElement("span");
 
         //Append the image tag to the LI tag
-        orderlist.appendChild(orderitemimgtag);
+        orderitemleftsidespan.appendChild(orderitemimgtag);
+
+        //Attach LI Tag to the text node
+        orderitemleftsidespan.appendChild(orderitemname);
+
+        orderitem.appendChild(orderitemleftsidespan);
+
+        orderitem.appendChild(orderitemprice);
+
+        //Append or Attach teh LI tag (child) to parent (orderlist)
+        orderlist.appendChild(orderitem);
       }
 
+      //Function to calculate the subtotal price of the order
       function costitems() {
-        document.getElementById("totalcost").innerHTML =
-          "Rp " +
-          orderpricearray
-            .reduce(function (a, b) {
-              return a + b;
-            }, 0)
-            .toFixed(3);
-        orderpricearray.sum(itemprice);
+        document.getElementById("totalcost").innerText =
+          "Rp " + orderpricearray.reduce(sumarray).toFixed(3);
+
+        function sumarray(total, num) {
+          return total + num;
+        }
       }
+
+      //   function tax() {
+      //     document.getElementById("totaltax").innerText =
+      //       "Rp " + orderpricearray.reduce(sumarray).toFixed(3);
+
+      //     function sumarray(total, num) {
+      //       return total + num;
+      //     }
+      //     orderpricearray.reduce(itemprice);
+      //   }
+
+      //   function total() {
+      //     document.getElementById("total").innerHTML =
+      //       "Rp " +
+      //       (
+      //         orderpricearray
+      //           .reduce(function (a, b) {
+      //             return a + b;
+      //           }, 0)
+      //           .toFixed(3) * 1.11
+      //       ).toFixed(3);
+      //   }
       // <li>
       //   <img src="./assets/default.jpeg" alt="pesanan" style="width: 50px" />
       //   <span style="font-size: 18px; font-weight: 500">Beras</span>
