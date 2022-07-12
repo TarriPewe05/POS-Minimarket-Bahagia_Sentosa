@@ -170,7 +170,7 @@
                   <div class="col">
                     <div
                       class="card"
-                      onclick="orderbasket('Beras', 65.755, './assets/default.jpeg'); costitems(); tax();totalcost();"
+                      onclick="orderbasket('Beras', 65.755, './assets/default.jpeg'); costitems(); tax();total();"
                     >
                       <img
                         draggable="false"
@@ -187,7 +187,7 @@
                   <div class="col">
                     <div
                       class="card"
-                      onclick="orderbasket('Minyak Goreng', 55.999, './assets/default.jpeg');costitems();tax();totalcost();"
+                      onclick="orderbasket('Minyak Goreng', 55.999, './assets/default.jpeg');costitems();tax();total();"
                     >
                       <img
                         draggable="false"
@@ -215,7 +215,7 @@
                   <div class="col">
                     <div
                       class="card"
-                      onclick="orderbasket('Sapu', 35.999, './assets/default.jpeg');costitems();tax();totalcost();"
+                      onclick="orderbasket('Sapu', 35.999, './assets/default.jpeg');costitems();tax();total();"
                     >
                       <img
                         draggable="false"
@@ -232,7 +232,7 @@
                   <div class="col">
                     <div
                       class="card"
-                      onclick="orderbasket('Ember', 20.999, './assets/default.jpeg');costitems();tax();totalcost();"
+                      onclick="orderbasket('Ember', 20.999, './assets/default.jpeg');costitems();tax();total();"
                     >
                       <img
                         draggable="false"
@@ -636,11 +636,11 @@
       }
 
       //function to calculate the total price of the order
-      function totalcost(){
-        let totalcost = document.getElementById("totalcost").innerText.replace("Rp ", "");
-        let totaltax = document.getElementById("totaltax").innerText.replace("Rp ", "");
-        totalcost = totalcost + totaltax;
-        document.getElementById("total").innerText = "Rp " + totalcost.toFixed(3);
+      function total(){
+        let total = document.getElementById("totalcost").innerText.replace("Rp ", "");
+        let tax = document.getElementById("totaltax").innerText.replace("Rp ", "");
+        total = total * 1.11;
+        document.getElementById("total").innerText = "Rp " + total.toFixed(3);
       }
 
       //Function Delete the all item from the orderlist
@@ -652,6 +652,8 @@
         orderarray.length = 0;
 
         costitems();
+        tax();
+        total();
 
       }
 
