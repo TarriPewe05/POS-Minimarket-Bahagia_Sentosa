@@ -492,9 +492,7 @@
             <div class="card-body shadow-sm">
               <h3><strong>Pesanan</strong></h3>
               <hr />
-              <ul id="orderlist" class="list-unstyled">
-              
-              </ul>
+              <ul id="orderlist" class="list-unstyled"></ul>
               <!-- <div class="row">
                 <img
                   src="./assets/default.jpeg"
@@ -530,9 +528,36 @@
                 </div>
               </div>
             </div>
-            <button type="button" class="btn btn-warning">
+            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
               <strong>BAYAR</strong>
             </button>
+
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-body justify-content-center align-items-center ">
+                        <img src="./assets/emot.jpeg" alt="" >
+                    <h2 style="text-align: center;">Terima Kasih Telah Berbelanja di <strong>SB Minimarket</strong></h2>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                    onclick="orderbasketClear()"
+                      type="button"
+                      class="btn btn-warning"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -551,7 +576,7 @@
         // console.log(orderarray);
         // console.log(orderarray.length);
 
-        const orderlist = document.getElementById("orderlist");
+        let orderlist = document.getElementById("orderlist");
 
         //Create LI tag
         const orderitem = document.createElement("li");
@@ -561,8 +586,6 @@
         const orderitemname = document.createTextNode(itemname);
         const orderitemprice = document.createTextNode(" Rp " + itemprice);
 
-        
-
         //Create Image Tag
         const orderitemimgtag = document.createElement("img");
 
@@ -570,7 +593,8 @@
         orderitemimgtag.src = itemimage;
 
         //classname w-25 for image
-        orderitemimgtag.className = "w-25 rounded border border-warning mb-1 me-2";
+        orderitemimgtag.className =
+          "w-25 rounded border border-warning mb-1 me-2";
 
         //
         const orderitemleftsidespan = document.createElement("span");
@@ -591,12 +615,28 @@
 
       //Function to calculate the subtotal price of the order
       function costitems() {
-        document.getElementById("totalcost").innerText =
-          "Rp " + orderpricearray.reduce(sumarray).toFixed(3);
 
-        function sumarray(total, num) {
-          return total + num;
+        if(orderpricearray.length === 0) {
+            document.getElementById("totalcost").innerText = 0;
+        }else{
+            document.getElementById("totalcost").innerText =
+              "Rp " + orderpricearray.reduce(sumarray).toFixed(3);
+    
+            function sumarray(total, num) {
+              return total + num;
+            }
         }
+      }
+
+      function orderbasketClear(){
+        let orderlist = document.getElementById("orderlist");
+        orderlist.innerHTML = "";
+        orderitemarray.length = 0;
+        orderpricearray.length = 0;
+        orderarray.length = 0;
+
+        costitems();
+
       }
 
       //   function tax() {
