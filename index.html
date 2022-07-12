@@ -24,13 +24,6 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Script -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"
-    ></script>
   </head>
   <body class="beranda">
     <!-- Header -->
@@ -175,7 +168,7 @@
               >
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                   <div class="col">
-                    <div class="card">
+                    <div class="card" onclick="orderbasket('Beras', 65.755);">
                       <img
                         src="./assets/default.jpeg"
                         class="card-img-top"
@@ -183,12 +176,12 @@
                       />
                       <div class="card-body shadow">
                         <h5 class="card-title">Beras</h5>
-                        <p class="card-text text-danger">Rp 65.000 /5kg</p>
+                        <p class="card-text text-danger">Rp 65.755 /5kg</p>
                       </div>
                     </div>
                   </div>
                   <div class="col">
-                    <div class="card">
+                    <div class="card" onclick="orderbasket('Minyak Goreng', 55.999);">
                       <img
                         src="./assets/default.jpeg"
                         class="card-img-top"
@@ -196,7 +189,7 @@
                       />
                       <div class="card-body shadow">
                         <h5 class="card-title">Minyak Goreng</h5>
-                        <p class="card-text text-danger">Rp 55.000 /liter</p>
+                        <p class="card-text text-danger">Rp 55.999 /liter</p>
                       </div>
                     </div>
                   </div>
@@ -212,7 +205,7 @@
               >
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                   <div class="col">
-                    <div class="card">
+                    <div class="card" onclick="orderbasket('Sapu', 35.999);">
                       <img
                         src="./assets/default.jpeg"
                         class="card-img-top"
@@ -220,12 +213,12 @@
                       />
                       <div class="card-body shadow">
                         <h5 class="card-title">Sapu</h5>
-                        <p class="card-text text-danger">Rp 35.000 /buah</p>
+                        <p class="card-text text-danger">Rp 35.999 /buah</p>
                       </div>
                     </div>
                   </div>
                   <div class="col">
-                    <div class="card">
+                    <div class="card" onclick="orderbasket('Ember', 20.999);">
                       <img
                         src="./assets/default.jpeg"
                         class="card-img-top"
@@ -233,7 +226,7 @@
                       />
                       <div class="card-body shadow">
                         <h5 class="card-title">Ember</h5>
-                        <p class="card-text text-danger">Rp 20.000 /buah</p>
+                        <p class="card-text text-danger">Rp 20.999 /buah</p>
                       </div>
                     </div>
                   </div>
@@ -471,7 +464,20 @@
             <div class="card-body shadow-sm">
               <h3><strong>Pesanan</strong></h3>
               <hr />
-              <div class="row">
+              <ul id="orderlist" class="list-unstyled">
+                <li>
+                  <img
+                    src="./assets/default.jpeg"
+                    alt="pesanan"
+                    style="width: 50px"
+                  />
+                  <span style="font-size: 18px; font-weight: 500">Beras</span>
+                  <span style="font-size: 16px; font-weight: 500"
+                    >Rp 65.000</span
+                  >
+                </li>
+              </ul>
+              <!-- <div class="row">
                 <img
                   src="./assets/default.jpeg"
                   alt="pesanan"
@@ -480,7 +486,7 @@
                 <div class="col d-flex justify-content-end align-items-center">
                   <h6>Rp 0</h6>
                 </div>
-              </div>
+              </div> -->
               <hr />
               <div class="row">
                 <div class="col"><h5>Subtotal</h5></div>
@@ -505,5 +511,38 @@
         </div>
       </div>
     </div>
+
+    <!-- Script -->
+    <script>
+      function orderbasket(itemname, itemprice) {
+        const orderlist = document.getElementById("orderlist");
+
+        //Create LI tag
+        const orderitem = document.createElement("li");
+
+        //create the text node
+        const orderitemname = document.createTextNode(itemname);
+        const orderitemprice = document.createTextNode(' Rp ' + itemprice);
+
+        //Attach LI Tag to the text node
+        orderitem.appendChild(orderitemname );
+        orderitem.appendChild(orderitemprice );
+
+        //Append or Attach teh LI tag (child) to parent (orderlist)
+        orderlist.appendChild(orderitem);
+      }
+      // <li>
+      //   <img src="./assets/default.jpeg" alt="pesanan" style="width: 50px" />
+      //   <span style="font-size: 18px; font-weight: 500">Beras</span>
+      //   <span style="font-size: 16px; font-weight: 500">Rp 65.000</span>
+      // </li>
+    </script>
+
+    <!-- Script Bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
