@@ -168,7 +168,10 @@
               >
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                   <div class="col">
-                    <div class="card" onclick="orderbasket('Beras', 65.755);">
+                    <div
+                      class="card"
+                      onclick="orderbasket('Beras', 65.755, './assets/default.jpeg'); costitems();"
+                    >
                       <img
                         src="./assets/default.jpeg"
                         class="card-img-top"
@@ -181,7 +184,10 @@
                     </div>
                   </div>
                   <div class="col">
-                    <div class="card" onclick="orderbasket('Minyak Goreng', 55.999);">
+                    <div
+                      class="card"
+                      onclick="orderbasket('Minyak Goreng', 55.999, './assets/default.jpeg');costitems();"
+                    >
                       <img
                         src="./assets/default.jpeg"
                         class="card-img-top"
@@ -205,7 +211,10 @@
               >
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                   <div class="col">
-                    <div class="card" onclick="orderbasket('Sapu', 35.999);">
+                    <div
+                      class="card"
+                      onclick="orderbasket('Sapu', 35.999, './assets/default.jpeg');costitems();"
+                    >
                       <img
                         src="./assets/default.jpeg"
                         class="card-img-top"
@@ -218,7 +227,10 @@
                     </div>
                   </div>
                   <div class="col">
-                    <div class="card" onclick="orderbasket('Ember', 20.999);">
+                    <div
+                      class="card"
+                      onclick="orderbasket('Ember', 20.999, './assets/default.jpeg');costitems();"
+                    >
                       <img
                         src="./assets/default.jpeg"
                         class="card-img-top"
@@ -466,11 +478,7 @@
               <hr />
               <ul id="orderlist" class="list-unstyled">
                 <li>
-                  <img
-                    src="./assets/default.jpeg"
-                    alt="pesanan"
-                    style="width: 50px"
-                  />
+                  <img src="./assets/default.jpeg" alt="pesanan" class="w-25" />
                   <span style="font-size: 18px; font-weight: 500">Beras</span>
                   <span style="font-size: 16px; font-weight: 500"
                     >Rp 65.000</span
@@ -490,7 +498,9 @@
               <hr />
               <div class="row">
                 <div class="col"><h5>Subtotal</h5></div>
-                <div class="col d-flex justify-content-end"><h5>Rp 0</h5></div>
+                <div id="totalcost" class="col d-flex justify-content-end">
+                  <h5>Rp 0</h5>
+                </div>
               </div>
               <div class="row">
                 <div class="col"><h6 class="text-danger">Ppn 11%</h6></div>
@@ -514,7 +524,17 @@
 
     <!-- Script -->
     <script>
-      function orderbasket(itemname, itemprice) {
+      const orderitemarray = [];
+      const orderpricearray = [];
+      const orderarray = [];
+
+      function orderbasket(itemname, itemprice, itemimage) {
+        orderitemarray.push(itemname);
+        orderpricearray.push(itemprice);
+        orderarray.push(itemname, itemprice, itemimage);
+        // console.log(orderarray);
+        // console.log(orderarray.length);
+
         const orderlist = document.getElementById("orderlist");
 
         //Create LI tag
@@ -522,14 +542,37 @@
 
         //create the text node
         const orderitemname = document.createTextNode(itemname);
-        const orderitemprice = document.createTextNode(' Rp ' + itemprice);
+        const orderitemprice = document.createTextNode(" Rp " + itemprice);
 
         //Attach LI Tag to the text node
-        orderitem.appendChild(orderitemname );
-        orderitem.appendChild(orderitemprice );
+        orderitem.appendChild(orderitemname);
+        orderitem.appendChild(orderitemprice);
 
         //Append or Attach teh LI tag (child) to parent (orderlist)
         orderlist.appendChild(orderitem);
+
+        //Create Image Tag
+        const orderitemimgtag = document.createElement("img");
+
+        //Set the src attribute of the image tag
+        orderitemimgtag.src = itemimage;
+
+        //classname w-25 for image
+        orderitemimgtag.className = "w-25";
+
+        //Append the image tag to the LI tag
+        orderlist.appendChild(orderitemimgtag);
+      }
+
+      function costitems() {
+        document.getElementById("totalcost").innerHTML =
+          "Rp " +
+          orderpricearray
+            .reduce(function (a, b) {
+              return a + b;
+            }, 0)
+            .toFixed(3);
+        orderpricearray.sum(itemprice);
       }
       // <li>
       //   <img src="./assets/default.jpeg" alt="pesanan" style="width: 50px" />
