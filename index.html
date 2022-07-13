@@ -166,7 +166,7 @@
                 role="tabpanel"
                 aria-labelledby="v-pills-sembako-tab"
               >
-                <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="row row-cols-1 row-cols-md-4 g-4">
                   <div class="col">
                     <div
                       class="card"
@@ -247,7 +247,7 @@
                         alt="..."
                       />
                       <div class="card-body shadow">
-                        <h5 class="card-title">Telur</h5>
+                        <h5 class="card-title">Gula</h5>
                         <p class="card-text text-danger">Rp 10.599 /Kg</p>
                       </div>
                     </div>
@@ -265,7 +265,7 @@
                       />
                       <div class="card-body shadow">
                         <h5 class="card-title">Susu</h5>
-                        <p class="card-text text-danger">Rp 11.599 /Kg</p>
+                        <p class="card-text text-danger">Rp 11.599 /pcs</p>
                       </div>
                     </div>
                   </div>
@@ -282,7 +282,58 @@
                       />
                       <div class="card-body shadow">
                         <h5 class="card-title">Garam</h5>
-                        <p class="card-text text-danger">Rp 2.999 /Kg</p>
+                        <p class="card-text text-danger">Rp 2.999 /pcs</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div
+                      class="card"
+                      onclick="orderbasket('Mie', 117.599, './assets/mie.jpeg');costitems();tax();total();"
+                    >
+                      <img
+                        draggable="false"
+                        src="./assets/mie.jpeg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body shadow">
+                        <h5 class="card-title">Mie Goreng</h5>
+                        <p class="card-text text-danger">Rp 117.599 /Pack</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div
+                      class="card"
+                      onclick="orderbasket('Tepung', 17.599, './assets/tepung.jpeg');costitems();tax();total();"
+                    >
+                      <img
+                        draggable="false"
+                        src="./assets/tepung.jpeg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body shadow">
+                        <h5 class="card-title">Tepung Terigu</h5>
+                        <p class="card-text text-danger">Rp 17.599 /Kg</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div
+                      class="card"
+                      onclick="orderbasket('kecap', 5.999, './assets/kecap.jpeg');costitems();tax();total();"
+                    >
+                      <img
+                        draggable="false"
+                        src="./assets/kecap.jpeg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body shadow">
+                        <h5 class="card-title">Kecap Manis</h5>
+                        <p class="card-text text-danger">Rp 5.599 /Pcs</p>
                       </div>
                     </div>
                   </div>
@@ -296,38 +347,174 @@
                 role="tabpanel"
                 aria-labelledby="v-pills-peralatan-tab"
               >
-                <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="row row-cols-1 row-cols-md-4 g-4">
                   <div class="col">
                     <div
                       class="card"
-                      onclick="orderbasket('Sapu', 35.999, './assets/default.jpeg');costitems();tax();total();"
+                      onclick="orderbasket('Sapu', 35.999, './assets/sapu.jpeg');costitems();tax();total();"
                     >
                       <img
                         draggable="false"
-                        src="./assets/default.jpeg"
+                        src="./assets/sapu.jpeg"
                         class="card-img-top"
                         alt="..."
                       />
                       <div class="card-body shadow">
                         <h5 class="card-title">Sapu</h5>
-                        <p class="card-text text-danger">Rp 35.999 /buah</p>
+                        <p class="card-text text-danger">Rp 35.999</p>
                       </div>
                     </div>
                   </div>
                   <div class="col">
                     <div
                       class="card"
-                      onclick="orderbasket('Ember', 20.999, './assets/default.jpeg');costitems();tax();total();"
+                      onclick="orderbasket('Ember', 20.999, './assets/ember.jpeg');costitems();tax();total();"
                     >
                       <img
                         draggable="false"
-                        src="./assets/default.jpeg"
+                        src="./assets/ember.jpeg"
                         class="card-img-top"
                         alt="..."
                       />
                       <div class="card-body shadow">
                         <h5 class="card-title">Ember</h5>
-                        <p class="card-text text-danger">Rp 20.999 /buah</p>
+                        <p class="card-text text-danger">Rp 20.999</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div
+                      class="card"
+                      onclick="orderbasket('pel', 25.999, './assets/pel.jpeg');costitems();tax();total();"
+                    >
+                      <img
+                        draggable="false"
+                        src="./assets/pel.jpeg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body shadow">
+                        <h5 class="card-title">Lap Pel</h5>
+                        <p class="card-text text-danger">Rp 25.999</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div
+                      class="card"
+                      onclick="orderbasket('kursi', 83.299, './assets/kursi.jpeg');costitems();tax();total();"
+                    >
+                      <img
+                        draggable="false"
+                        src="./assets/kursi.jpeg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body shadow">
+                        <h5 class="card-title">Kursi Kayu</h5>
+                        <p class="card-text text-danger">Rp 83.299</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div
+                      class="card"
+                      onclick="orderbasket('meja', 120.899, './assets/meja.jpeg');costitems();tax();total();"
+                    >
+                      <img
+                        draggable="false"
+                        src="./assets/meja.jpeg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body shadow">
+                        <h5 class="card-title">Meja Kayu</h5>
+                        <p class="card-text text-danger">Rp 120.899</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div
+                      class="card"
+                      onclick="orderbasket('kanebo', 12.499, './assets/kanebo.jpeg');costitems();tax();total();"
+                    >
+                      <img
+                        draggable="false"
+                        src="./assets/kanebo.jpeg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body shadow">
+                        <h5 class="card-title">Kanebo</h5>
+                        <p class="card-text text-danger">Rp 12.499</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div
+                      class="card"
+                      onclick="orderbasket('stop kontak', 45.599, './assets/stopkontak.jpeg');costitems();tax();total();"
+                    >
+                      <img
+                        draggable="false"
+                        src="./assets/stopkontak.jpeg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body shadow">
+                        <h5 class="card-title">Stop Kontak</h5>
+                        <p class="card-text text-danger">Rp 45.599</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div
+                      class="card"
+                      onclick="orderbasket('wajan', 63.599, './assets/wajan.jpeg');costitems();tax();total();"
+                    >
+                      <img
+                        draggable="false"
+                        src="./assets/wajan.jpeg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body shadow">
+                        <h5 class="card-title">Wajan</h5>
+                        <p class="card-text text-danger">Rp 63.599</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div
+                      class="card"
+                      onclick="orderbasket('panci', 72.499, './assets/panci.jpeg');costitems();tax();total();"
+                    >
+                      <img
+                        draggable="false"
+                        src="./assets/panci.jpeg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body shadow">
+                        <h5 class="card-title">Panci</h5>
+                        <p class="card-text text-danger">Rp 72.499</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div
+                      class="card"
+                      onclick="orderbasket('setrika', 242.499, './assets/setrika.jpeg');costitems();tax();total();"
+                    >
+                      <img
+                        draggable="false"
+                        src="./assets/setrika.jpeg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body shadow">
+                        <h5 class="card-title">Setrika</h5>
+                        <p class="card-text text-danger">Rp 242.499</p>
                       </div>
                     </div>
                   </div>
@@ -341,32 +528,174 @@
                 role="tabpanel"
                 aria-labelledby="v-pills-kosmetik-tab"
               >
-                <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="row row-cols-1 row-cols-md-4 g-4">
                   <div class="col">
-                    <div class="card">
+                    <div
+                      class="card"
+                      onclick="orderbasket('Lipstick', 15.999, './assets/lipstick.jpeg');costitems();tax();total();"
+                    >
                       <img
                         draggable="false"
-                        src="./assets/default.jpeg"
+                        src="./assets/lipstick.jpeg"
                         class="card-img-top"
                         alt="..."
                       />
                       <div class="card-body shadow">
-                        <h5 class="card-title">Pembersih Wajah</h5>
-                        <p class="card-text text-danger">Rp 37.900 /buah</p>
+                        <h5 class="card-title">Lipstick</h5>
+                        <p class="card-text text-danger">Rp 15.999</p>
                       </div>
                     </div>
                   </div>
                   <div class="col">
-                    <div class="card">
+                    <div
+                      class="card"
+                      onclick="orderbasket('Bedak', 31.699, './assets/bedak.jpeg');costitems();tax();total();"
+                    >
                       <img
                         draggable="false"
-                        src="./assets/default.jpeg"
+                        src="./assets/bedak.jpeg"
                         class="card-img-top"
                         alt="..."
                       />
                       <div class="card-body shadow">
-                        <h5 class="card-title">Kapas</h5>
-                        <p class="card-text text-danger">Rp 22.500 /buah</p>
+                        <h5 class="card-title">Bedak Tabur</h5>
+                        <p class="card-text text-danger">Rp 31.699 </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div
+                      class="card"
+                      onclick="orderbasket('Blush on', 33.999, './assets/blushon.jpeg');costitems();tax();total();"
+                    >
+                      <img
+                        draggable="false"
+                        src="./assets/blushon.jpeg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body shadow">
+                        <h5 class="card-title">Blush On</h5>
+                        <p class="card-text text-danger">Rp 33.999</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div
+                      class="card"
+                      onclick="orderbasket('Eye shadow', 43.299, './assets/eyeshadow.jpeg');costitems();tax();total();"
+                    >
+                      <img
+                        draggable="false"
+                        src="./assets/eyeshadow.jpeg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body shadow">
+                        <h5 class="card-title">Eye Shadow</h5>
+                        <p class="card-text text-danger">Rp 43.299</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div
+                      class="card"
+                      onclick="orderbasket('maskara', 80.899, './assets/maskara.jpeg');costitems();tax();total();"
+                    >
+                      <img
+                        draggable="false"
+                        src="./assets/maskara.jpeg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body shadow">
+                        <h5 class="card-title">Maskara</h5>
+                        <p class="card-text text-danger">Rp 80.899</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div
+                      class="card"
+                      onclick="orderbasket('Eyeliner', 45.499, './assets/eyeliner.jpeg');costitems();tax();total();"
+                    >
+                      <img
+                        draggable="false"
+                        src="./assets/eyeliner.jpeg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body shadow">
+                        <h5 class="card-title">Eyeliner</h5>
+                        <p class="card-text text-danger">Rp 45.499</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div
+                      class="card"
+                      onclick="orderbasket('BB Cream', 34.599, './assets/bbcream.jpeg');costitems();tax();total();"
+                    >
+                      <img
+                        draggable="false"
+                        src="./assets/bbcream.jpeg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body shadow">
+                        <h5 class="card-title">BB Cream</h5>
+                        <p class="card-text text-danger">Rp 34.599</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div
+                      class="card"
+                      onclick="orderbasket('Pensil alis', 13.599, './assets/pensilalis.jpeg');costitems();tax();total();"
+                    >
+                      <img
+                        draggable="false"
+                        src="./assets/pensilalis.jpeg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body shadow">
+                        <h5 class="card-title">Pensil Alis</h5>
+                        <p class="card-text text-danger">Rp 13.599</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div
+                      class="card"
+                      onclick="orderbasket('kapas', 12.499, './assets/kapas.jpeg');costitems();tax();total();"
+                    >
+                      <img
+                        draggable="false"
+                        src="./assets/kapas.jpeg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body shadow">
+                        <h5 class="card-title">Kapas Kecantikan</h5>
+                        <p class="card-text text-danger">Rp 12.499</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div
+                      class="card"
+                      onclick="orderbasket('Face wash', 42.499, './assets/facewash.jpeg');costitems();tax();total();"
+                    >
+                      <img
+                        draggable="false"
+                        src="./assets/facewash.jpeg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body shadow">
+                        <h5 class="card-title">Face Wash</h5>
+                        <p class="card-text text-danger">Rp 42.499</p>
                       </div>
                     </div>
                   </div>
@@ -380,32 +709,174 @@
                 role="tabpanel"
                 aria-labelledby="v-pills-cemilan-tab"
               >
-                <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="row row-cols-1 row-cols-md-4 g-4">
                   <div class="col">
-                    <div class="card">
+                    <div
+                      class="card"
+                      onclick="orderbasket('Mie lidi', 5.999, './assets/mielidi.jpeg');costitems();tax();total();"
+                    >
                       <img
                         draggable="false"
-                        src="./assets/default.jpeg"
+                        src="./assets/mielidi.jpeg"
                         class="card-img-top"
                         alt="..."
                       />
                       <div class="card-body shadow">
-                        <h5 class="card-title">QuSuka</h5>
-                        <p class="card-text text-danger">Rp 12.900 /buah</p>
+                        <h5 class="card-title">Mie Lidi</h5>
+                        <p class="card-text text-danger">Rp 5.999</p>
                       </div>
                     </div>
                   </div>
                   <div class="col">
-                    <div class="card">
+                    <div
+                      class="card"
+                      onclick="orderbasket('Basreng', 3.699, './assets/basreng.jpeg');costitems();tax();total();"
+                    >
                       <img
                         draggable="false"
-                        src="./assets/default.jpeg"
+                        src="./assets/basreng.jpeg"
                         class="card-img-top"
                         alt="..."
                       />
                       <div class="card-body shadow">
-                        <h5 class="card-title">Biskuat</h5>
-                        <p class="card-text text-danger">Rp 22.500 /buah</p>
+                        <h5 class="card-title">Basreng</h5>
+                        <p class="card-text text-danger">Rp 3.699 </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div
+                      class="card"
+                      onclick="orderbasket('Seblak', 33.999, './assets/seblak.jpeg');costitems();tax();total();"
+                    >
+                      <img
+                        draggable="false"
+                        src="./assets/seblak.jpeg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body shadow">
+                        <h5 class="card-title">Seblak</h5>
+                        <p class="card-text text-danger">Rp 33.999</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div
+                      class="card"
+                      onclick="orderbasket('Makroni', 13.299, './assets/makroni.jpeg');costitems();tax();total();"
+                    >
+                      <img
+                        draggable="false"
+                        src="./assets/makroni.jpeg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body shadow">
+                        <h5 class="card-title">Makori Pedas</h5>
+                        <p class="card-text text-danger">Rp 13.299</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div
+                      class="card"
+                      onclick="orderbasket('Kripik', 80.899, './assets/kripik.jpeg');costitems();tax();total();"
+                    >
+                      <img
+                        draggable="false"
+                        src="./assets/kripik.jpeg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body shadow">
+                        <h5 class="card-title">Kripik Singkong</h5>
+                        <p class="card-text text-danger">Rp 8.899</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div
+                      class="card"
+                      onclick="orderbasket('Stik talas', 15.499, './assets/stiktalas.jpeg');costitems();tax();total();"
+                    >
+                      <img
+                        draggable="false"
+                        src="./assets/stiktalas.jpeg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body shadow">
+                        <h5 class="card-title">Stik Talas</h5>
+                        <p class="card-text text-danger">Rp 15.499</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div
+                      class="card"
+                      onclick="orderbasket('Kripik pisang', 14.599, './assets/kripikpisang.jpeg');costitems();tax();total();"
+                    >
+                      <img
+                        draggable="false"
+                        src="./assets/kripikpisang.jpeg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body shadow">
+                        <h5 class="card-title">Kripik Pisang</h5>
+                        <p class="card-text text-danger">Rp 14.599</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div
+                      class="card"
+                      onclick="orderbasket('Galendo', 23.599, './assets/galendo.jpeg');costitems();tax();total();"
+                    >
+                      <img
+                        draggable="false"
+                        src="./assets/galendo.jpeg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body shadow">
+                        <h5 class="card-title">Galendo</h5>
+                        <p class="card-text text-danger">Rp 23.599</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div
+                      class="card"
+                      onclick="orderbasket('Kripik Ubi', 32.499, './assets/kripikubi.jpeg');costitems();tax();total();"
+                    >
+                      <img
+                        draggable="false"
+                        src="./assets/kripikubi.jpeg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body shadow">
+                        <h5 class="card-title">Kripik Ubi Ungu</h5>
+                        <p class="card-text text-danger">Rp 32.499</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div
+                      class="card"
+                      onclick="orderbasket('Otak-otak', 12.499, './assets/otakotak.jpeg');costitems();tax();total();"
+                    >
+                      <img
+                        draggable="false"
+                        src="./assets/otakotak.jpeg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body shadow">
+                        <h5 class="card-title">Otak-otak</h5>
+                        <p class="card-text text-danger">Rp 12.499</p>
                       </div>
                     </div>
                   </div>
